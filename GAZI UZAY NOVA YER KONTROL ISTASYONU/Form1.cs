@@ -205,12 +205,8 @@ namespace GAZI_UZAY_NOVA_YER_KONTROL_ISTASYONU
             this.chart4.Series[0].Points.AddXY(textBox2.Text, textBox6.Text);      // YÜKSEKLİK GRAFİĞİ
             this.chart5.Series[0].Points.AddXY(textBox2.Text, textBox11.Text);     // VOLTAJ GRAFİĞİ
 
-            //NOKTALAR VİRGÜLE DÖNÜŞTÜRME İŞLEMİ YAPILIYOR.
-           // string gLat = string.Format(textBox12.Text);
-            //string gLong = string.Format(textBox13.Text);
-            //string tLat = string.Format(textBox15.Text);
-            //string tLong = string.Format(textBox16.Text);
-           
+            
+            
             try
             {
                 xDegree = string.Format(textBox19.Text);
@@ -231,15 +227,10 @@ namespace GAZI_UZAY_NOVA_YER_KONTROL_ISTASYONU
             }
       
 
-            //gLat = gLat.Replace('.', ',');
-            //gLong = gLong.Replace('.', ',');
-            //tLat = tLat.Replace('.', ',');
-            //tLong = tLong.Replace('.', ',');
+        
             
 
             // GÖREV YÜKÜ HARİTASINA ATAMA YAPILIYOR.
-
-
             try
             {
                 string gLat = string.Format(textBox12.Text);
@@ -320,32 +311,6 @@ namespace GAZI_UZAY_NOVA_YER_KONTROL_ISTASYONU
             }
 
 
-     
-            //double mapGLat = Convert.ToDouble(gLat);
-            //double mapGLong = Convert.ToDouble(gLong);
-           /* gMapControl1.Position = new GMap.NET.PointLatLng(mapGLat, mapGLong);
-            gMapControl1.MinZoom = 10;
-            gMapControl1.MaxZoom = 1000;
-            gMapControl1.Zoom = 16;
-            PointLatLng point = new PointLatLng();
-            GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red);
-            GMapOverlay markers = new GMapOverlay("markers");
-            markers.Markers.Add(marker);
-            gMapControl1.Overlays.Add(markers);*/
-
-            // TAŞIYICI HARİTASINA ATAMA YAPILIYOR.
-            /*double mapTLat = Convert.ToDouble(tLat);
-            double mapTLong = Convert.ToDouble(tLong);
-            gMapControl2.Position = new GMap.NET.PointLatLng(mapTLat, mapTLong);
-            gMapControl2.MinZoom = 10;
-            gMapControl2.MaxZoom = 1000;
-            gMapControl2.Zoom = 16;
-            PointLatLng point2 = new PointLatLng();
-            GMapMarker marker2 = new GMarkerGoogle(point2, GMarkerGoogleType.red);
-            GMapOverlay markers2 = new GMapOverlay("markers");
-            markers2.Markers.Add(marker2);
-            gMapControl2.Overlays.Add(markers2);*/
-
             //
             try
             {
@@ -364,10 +329,10 @@ namespace GAZI_UZAY_NOVA_YER_KONTROL_ISTASYONU
 
             }
 
-            //
-            //int stateINFO = Convert.ToInt32(textBox18.Text);
-            //int stateUydu = stateINFO + 1 ;         // Vertical Progress Bar için atama yapılıyor.
-           // verticalProgressBar1.Value = stateINFO + 1 ;
+            
+            int stateINFO = Convert.ToInt32(textBox18.Text);
+            int stateUydu = stateINFO + 1 ;         // Vertical Progress Bar için atama yapılıyor.
+            verticalProgressBar1.Value = stateINFO + 1 ;
         }
 
         private void btnBaglan_Click(object sender, EventArgs e)
@@ -461,7 +426,6 @@ namespace GAZI_UZAY_NOVA_YER_KONTROL_ISTASYONU
 
         private void btnVideo_Click(object sender, EventArgs e)
         {
-            //serialPort1.Write("G8*");
             using (OpenFileDialog ofd = new OpenFileDialog() { Multiselect = true, ValidateNames = true, Filter = "All Files|*.*" })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
@@ -623,7 +587,6 @@ namespace GAZI_UZAY_NOVA_YER_KONTROL_ISTASYONU
             GL.Vertex3(0, -1000, 0);
 
             GL.End();
-            //GraphicsContext.CurrentContext.VSync = true;
             glControl1.SwapBuffers();
         }
 
