@@ -60,18 +60,6 @@ namespace GAZI_UZAY_NOVA_YER_KONTROL_ISTASYONU
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.Visible = false;
-            textBox24.Visible = false;
-            textBox25.Visible = false;
-            textBox26.Visible = false;
-            textBox27.Visible = false;
-            textBox28.Visible = false;
-            textBox29.Visible = false;
-            textBox30.Visible = false;
-            textBox31.Visible = false;
-            textBox32.Visible = false;
-
-
-
             string[] ports = SerialPort.GetPortNames();
             foreach (string port in ports)
             {
